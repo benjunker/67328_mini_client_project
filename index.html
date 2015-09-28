@@ -19,14 +19,24 @@
   <script type = "text/javascript" src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
   <script type="text/javascript" src="scripts/materialize.min.js"></script>
   <script>
-	var url = 'https://api.soundcloud.com/tracks?client_id=664d2bbfa8ffabfce32a4435e0d40bad';
-	$.getJSON(url, function(tracks) {
-	  $(tracks).each(function(track) {
-	    console.log(track.title);
-	  })
-	});
+		var url = 'https://api.soundcloud.com/tracks?client_id=664d2bbfa8ffabfce32a4435e0d40bad';
+		$.getJSON(url, function(tracks) {
+		  $(tracks).each(function(track) {
+		    console.log(track.title);
+		  })
+		});
 	</script>
 </head>
 <body>
+	<script>
+		SC.initialize({
+		  client_id: '664d2bbfa8ffabfce32a4435e0d40bad'
+		});
+
+		var track_url = 'http://soundcloud.com/forss/flickermood';
+		SC.oEmbed(track_url, { auto_play: true }, function(oEmbed) {
+		  console.log('oEmbed response: ' + oEmbed);
+		});
+	</script>
 </body>
 </html>
