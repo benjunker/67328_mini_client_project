@@ -11,3 +11,13 @@ var url = 'https://api.soundcloud.com/tracks?client_id=664d2bbfa8ffabfce32a4435e
 			console.log(tracks[random_num]);
 	}
 	});
+
+
+SC.initialize({
+  client_id: '664d2bbfa8ffabfce32a4435e0d40bad'
+});
+
+var track_url = 'http://soundcloud.com/forss/flickermood';
+SC.oEmbed(track_url, { auto_play: true }, function(oEmbed) {
+  console.log('oEmbed response: ' + oEmbed);
+});

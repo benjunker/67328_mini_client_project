@@ -1,0 +1,47 @@
+<!-- CLIENT ID: 664d2bbfa8ffabfce32a4435e0d40bad -->
+<!-- CLIENT SECRET: 877ea18bd6ad0f845cd7a4c6bcf44c35 -->
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>HW6 - Mini Client Project</title>
+  <!--Import Google Icon Font-->
+  <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <!--Import materialize.css-->
+  <link type="text/css" rel="stylesheet" href="css/materialize.min.css"  media="screen,projection"/>
+
+  <!--Let browser know website is optimized for mobile-->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+
+  <script src="http://connect.soundcloud.com/sdk-2.0.0.js"></script>
+  <script type = "text/javascript" src="scripts/hw6.js"></script>
+  <script type = "text/javascript" src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
+  <script type="text/javascript" src="scripts/materialize.min.js"></script>
+  <script>
+		var url = 'https://api.soundcloud.com/tracks?client_id=664d2bbfa8ffabfce32a4435e0d40bad';
+		$.getJSON(url, function(tracks) {
+		  $(tracks).each(function(track) {
+		    console.log(track.title);
+		  })
+		});
+	</script>
+
+	<!-- Soundcloud Player Widget -->
+	<script type="text/javascript" src="scripts/soundcloud.player.api.js"></script>
+	<script type="text/javascript">
+   soundcloud.addEventListener('onPlayerReady', function(player, data) {
+     player.api_play();
+   });
+</script>
+</head>
+<body>
+	<!-- https://soundcloud.com/subfocus/tidal-wave-feat-alpines-preview -->
+	<!-- http%3A%2F%2Fsoundcloud.com%2Fsubfocus%2Ftidal-wave-feat-alpines-preview -->
+	<object height="81" width="100%" id="yourPlayerId" classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000">
+  <param name="movie" value="http://player.soundcloud.com/player.swf?url=http%3A%2F%2Fsoundcloud.com%2Fsubfocus%2Ftidal-wave-feat-alpines-preview&enable_api=true&object_id=yourPlayerId"></param>
+  <param name="allowscriptaccess" value="always"></param>
+  <embed allowscriptaccess="always" height="81" src="http://player.soundcloud.com/player.swf?url=http%3A%2F%2Fsoundcloud.com%2Fsubfocus%2Ftidal-wave-feat-alpines-preview&enable_api=true&object_id=yourPlayerId" type="application/x-shockwave-flash" width="100%" name="yourPlayerId"></embed>
+</object>
+</body>
+</html>
